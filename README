@@ -1,2 +1,2 @@
 # Dotfiles
-Move all files in files/ to your home directory.
+cd into the dotfiles dir and run `./install.sh`
