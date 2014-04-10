@@ -1,4 +1,6 @@
 #!/bin/bash
 
+git submodule update
+
 shopt -s dotglob
-mv files/* ~/.
+cp -r files/* ~/.
