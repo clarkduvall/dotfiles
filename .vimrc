@@ -11,7 +11,7 @@ set tabstop=2
 set backspace=2
 set hlsearch
 set textwidth=80
-set formatoptions=cnqroa
+set formatoptions=nqro
 set bg=dark
 
 " Undo file.
@@ -39,3 +39,9 @@ nnoremap <tab> <C-w><C-w>
 
 " Pathogen fun.
 call pathogen#infect()
+
+" Folding.
+setlocal foldmethod=syntax
+setlocal foldnestmax=2
+setlocal nofoldenable
+nnoremap <space> za
