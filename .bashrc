@@ -5,11 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Amazon stuff.
-export EC2_HOME=/home/clark/bin/amazon/ec2-api-tools-1.6.7.4
-export AWS_ACCESS_KEY=AKIAJO4PV6XLLGX3XBAA
-export AWS_SECRET_KEY=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
-
 export EDITOR=/usr/bin/vim
 export PATH=$PATH:~/.gem/ruby/2.1.0/bin:~/bin/:$EC2_HOME:.
 export HISTCONTROL=ignoredups
