@@ -7,6 +7,11 @@ export EDITOR=/usr/bin/vim
 # Add current dir to path.
 export PATH=$PATH:.
 
+# Git current branch.
+function current_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
 # Aliases
 alias pdf='evince'
 alias grep='egrep --color'
@@ -18,6 +23,8 @@ alias hgrep='history | egrep --color'
 alias gmm='git merge master'
 alias gg='git grep --color -n'
 alias vs='vim -O'
+alias gpull='git pull --rebase origin $(current_branch)'
+alias gpush='git push origin $(current_branch)'
 
 # COLORS.
 if [ -x /usr/bin/dircolors ]; then
@@ -82,3 +89,5 @@ fi
 unset color_prompt force_color_prompt
 
 ssh-agent > /dev/null
+
+test -r ~/.bash_local.sh && source ~/.bash_local.sh

@@ -1,9 +1,0 @@
-[user]
-	email = clark.duvall@gmail.com
-	name = Clark DuVall
-[push]
-	default = simple
-[color]
-	ui = auto
-[diff]
-	tool = vimdiff
