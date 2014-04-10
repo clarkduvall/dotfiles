@@ -37,6 +37,10 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
 
+" Move multiple lines at once.
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+
 " Pathogen fun.
 call pathogen#infect()
 
