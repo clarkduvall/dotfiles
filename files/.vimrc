@@ -55,3 +55,6 @@ setlocal foldmethod=syntax
 setlocal foldnestmax=2
 setlocal nofoldenable
 nnoremap <space> za
+
+" NERDTree.
+map <C-n> :NERDTreeToggle<cr>
