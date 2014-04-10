@@ -1,5 +1,8 @@
+set nocompatible
+
 syntax on
 filetype plugin on
+filetype indent on
 
 set autoindent
 set showmode
@@ -47,6 +50,9 @@ vnoremap <C-k> 10k
 vnoremap <C-l> 10l
 vnoremap <C-h> 10h
 
+" Make Y work like D.
+nnoremap Y y$
+
 " Pathogen fun.
 call pathogen#infect()
 
@@ -58,3 +64,7 @@ nnoremap <space> za
 
 " NERDTree.
 map <C-n> :NERDTreeToggle<cr>
+
+" Bash style completion.
+set wildmode=list:longest
+set wildmenu
