@@ -40,6 +40,8 @@ nnoremap <tab> <C-w><C-w>
 " Move multiple lines at once.
 nnoremap <C-j> 10j
 nnoremap <C-k> 10k
+nnoremap <C-l> 10l
+nnoremap <C-h> 10h
 
 " Pathogen fun.
 call pathogen#infect()
