@@ -1,1 +1,5 @@
 *.swp
+.viminfo
+.ssh/
+.bash_history
+.netrwhist
