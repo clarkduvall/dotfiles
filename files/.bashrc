@@ -52,11 +52,6 @@ HISTSIZE=100000
 # of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # Please colors.
 force_color_prompt=yes
 if [ -n "$force_color_prompt" ]; then
