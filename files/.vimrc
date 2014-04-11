@@ -53,6 +53,9 @@ vnoremap <C-h> 10h
 " Make Y work like D.
 nnoremap Y y$
 
+" Create newlines in normal mode.
+nnoremap <cr> o<esc>
+
 " Pathogen fun.
 call pathogen#infect()
 
