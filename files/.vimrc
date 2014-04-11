@@ -57,9 +57,9 @@ nnoremap Y y$
 call pathogen#infect()
 
 " Folding.
-setlocal foldmethod=syntax
-setlocal foldnestmax=2
-setlocal nofoldenable
+set foldmethod=indent
+set foldnestmax=2
+set nofoldenable
 nnoremap <space> za
 
 " NERDTree.
