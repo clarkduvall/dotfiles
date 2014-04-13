@@ -67,6 +67,7 @@ nnoremap <space> za
 
 " NERDTree.
 map <C-n> :NERDTreeToggle<cr>
+let g:NERDTreeDirArrows=0
 
 " Bash style completion.
 set wildmode=list:longest
