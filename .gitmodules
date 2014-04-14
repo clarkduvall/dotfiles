@@ -13,3 +13,6 @@
 [submodule "files/.vim/bundle/MatchTagAlways"]
 	path = files/.vim/bundle/MatchTagAlways
 	url = git@github.com:Valloric/MatchTagAlways.git
+[submodule "files/.vim/bundle/nerdcommenter"]
+	path = files/.vim/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
