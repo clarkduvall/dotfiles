@@ -83,6 +83,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-ssh-agent > /dev/null
+eval `ssh-agent`
 
 test -r ~/.bash_local.sh && source ~/.bash_local.sh
