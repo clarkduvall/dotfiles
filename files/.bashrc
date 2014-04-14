@@ -76,6 +76,7 @@ source ~/.git-prompt.sh
 if [ "$color_prompt" = yes ]; then
   # Seed random with hash of hostname.
   RANDOM=$(hash_str $HOSTNAME$USER)
+  export GIT_PS1_SHOWDIRTYSTATE=1
   PS1='\[\e[01;'$(($RANDOM % 6 + 31))'m\]\u\[\e[00m\]@\[\e[01;'$(($RANDOM % 6 + 31))'m\]\h\[\e[00m\](\[\e[01;'$(($RANDOM % 6 + 31))'m\]$(__git_ps1 "%s")\[\e[00m\])\[\e[01;'$(($RANDOM % 6 + 31))'m\]\w\[\e[00m\]\$ '
   RANDOM=$$
 else
@@ -83,6 +84,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-eval `ssh-agent`
+eval `ssh-agent` > /dev/null
 
 test -r ~/.bash_local.sh && source ~/.bash_local.sh
