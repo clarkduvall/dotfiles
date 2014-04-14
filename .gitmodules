@@ -10,3 +10,6 @@
 [submodule "files/.vim/bundle/nerdtree"]
 	path = files/.vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "files/.vim/bundle/MatchTagAlways"]
+	path = files/.vim/bundle/MatchTagAlways
+	url = git@github.com:Valloric/MatchTagAlways.git
