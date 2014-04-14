@@ -10,9 +10,18 @@
 [submodule "files/.vim/bundle/nerdtree"]
 	path = files/.vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule "files/.vim/bundle/MatchTagAlways"]
-	path = files/.vim/bundle/MatchTagAlways
-	url = git@github.com:Valloric/MatchTagAlways.git
 [submodule "files/.vim/bundle/nerdcommenter"]
 	path = files/.vim/bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "files/.vim/bundle/IndexedSearch"]
+	path = files/.vim/bundle/IndexedSearch
+	url = git@github.com:vim-scripts/IndexedSearch.git
+[submodule "files/.vim/bundle/delimitMate"]
+	path = files/.vim/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule "files/.vim/bundle/MatchTag"]
+	path = files/.vim/bundle/MatchTag
+	url = git@github.com:gregsexton/MatchTag.git
+[submodule "files/.vim/bundle/matchit"]
+	path = files/.vim/bundle/matchit
+	url = git@github.com:vim-scripts/matchit.zip.git
