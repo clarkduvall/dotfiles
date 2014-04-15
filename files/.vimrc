@@ -11,6 +11,7 @@ set smartindent
 set shiftwidth=2
 set expandtab
 set tabstop=2
+set softtabstop=2
 set backspace=2
 set hlsearch
 set textwidth=80
