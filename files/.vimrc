@@ -66,7 +66,7 @@ set nofoldenable
 nnoremap <space> za
 
 " NERDTree.
-map <C-n> :NERDTreeToggle<cr>
+noremap <C-n> :NERDTreeToggle<cr>
 let g:NERDTreeDirArrows=0
 
 " For NERDCommenter.
