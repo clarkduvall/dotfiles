@@ -72,7 +72,11 @@ function hash_str {
   echo $sum
 }
 
+
+# Source some git things.
+source ~/.git-completion.bash
 source ~/.git-prompt.sh
+
 if [ "$color_prompt" = yes ]; then
   # Seed random with hash of hostname.
   RANDOM=$(hash_str $HOSTNAME$USER)
