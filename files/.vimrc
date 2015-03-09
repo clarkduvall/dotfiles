@@ -1,8 +1,31 @@
 set nocompatible
 
+" vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
+Plugin 'gregsexton/MatchTag'
+Plugin 'groenewege/vim-less'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-fugitive'
+Plugin 'yssl/QFEnter'
+
+call vundle#end()
+
 syntax on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set autoindent
 set showmode
