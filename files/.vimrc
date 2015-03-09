@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
@@ -44,7 +45,7 @@ set backspace=2
 set hlsearch
 set textwidth=80
 set formatoptions=nqro
-set bg=dark
+colorscheme tchaba2
 
 " Undo file.
 set undofile
@@ -88,9 +89,6 @@ noremap <space>= :Tabularize /^[^=]*\zs=<cr>
 
 " Make Y work like D.
 nnoremap Y y$
-
-" Pathogen fun.
-call pathogen#infect()
 
 " NERDTree.
 noremap <C-n> :NERDTreeToggle<cr>
@@ -148,7 +146,14 @@ set noshowmode
 let g:airline_theme='raven'
 
 " tagbar
-nnoremap <C-a> :TagbarToggle<cr>
+" nnoremap <C-i> :TagbarToggle<cr>
 
 " gundo
 let g:gundo_preview_bottom=1
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
