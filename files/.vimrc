@@ -8,18 +8,23 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate'
+Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
 Plugin 'gregsexton/MatchTag'
 Plugin 'groenewege/vim-less'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
 Plugin 'yssl/QFEnter'
 
 call vundle#end()
@@ -136,3 +141,14 @@ vnoremap <C-f> y:<C-r>=SimpleFind()<cr><cr><cr>gv
 nnoremap <C-f> yiw:<C-r>=SimpleFind()<cr><cr><cr>
 vnoremap <C-g> y:<C-r>=FindDefinition()<cr><cr><cr>gv
 nnoremap <C-g> yiw:<C-r>=FindDefinition()<cr><cr><cr>
+
+" vim-airline
+set laststatus=2
+set noshowmode
+let g:airline_theme='raven'
+
+" tagbar
+nnoremap <C-a> :TagbarToggle<cr>
+
+" gundo
+let g:gundo_preview_bottom=1
