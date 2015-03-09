@@ -25,6 +25,7 @@ alias gg='git grep --color -n'
 alias vs='vim -O'
 alias gpull='git pull --rebase origin $(current_branch)'
 alias gpush='git push origin $(current_branch)'
+alias f='find | grep'
 
 # COLORS.
 if [ -x /usr/bin/dircolors ]; then
@@ -52,6 +53,9 @@ HISTSIZE=100000
 # of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Correct cd spelling.
+shopt -s cdspell
+
 # Please colors.
 force_color_prompt=yes
 if [ -n "$force_color_prompt" ]; then
@@ -72,7 +76,6 @@ function hash_str {
   echo $sum
 }
 
-
 # Source some git things.
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
@@ -81,13 +84,11 @@ if [ "$color_prompt" = yes ]; then
   # Seed random with hash of hostname.
   RANDOM=$(hash_str $HOSTNAME$USER)
   export GIT_PS1_SHOWDIRTYSTATE=1
-  PS1='\[\e[01;'$(($RANDOM % 6 + 31))'m\]\u\[\e[00m\]@\[\e[01;'$(($RANDOM % 6 + 31))'m\]\h\[\e[00m\](\[\e[01;'$(($RANDOM % 6 + 31))'m\]$(__git_ps1 "%s")\[\e[00m\])\[\e[01;'$(($RANDOM % 6 + 31))'m\]\w\[\e[00m\]\$ '
+  PS1='\[\e[01;'$(($RANDOM % 6 + 31))'m\]\u\[\e[00m\]@\[\e[01;'$(($RANDOM % 6 + 31))'m\]\h\[\e[00m\](\[\e[01;'$(($RANDOM % 6 + 31))'m\]$(current_branch)\[\e[00m\])\[\e[01;'$(($RANDOM % 6 + 31))'m\]\w\[\e[00m\]\$ '
   RANDOM=$$
 else
   PS1='\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
-eval `ssh-agent` > /dev/null
 
 test -r ~/.bash_local.sh && source ~/.bash_local.sh

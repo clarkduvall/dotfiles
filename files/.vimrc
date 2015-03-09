@@ -40,6 +40,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
 
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
+nnoremap <s-tab> <C-w><left>
 
 " Move multiple lines at once.
 nnoremap <C-j> 10j
@@ -51,20 +52,17 @@ vnoremap <C-k> 10k
 vnoremap <C-l> 10l
 vnoremap <C-h> 10h
 
+nnoremap <space><space> vip:sort<cr>
+
+noremap <space>: :sort<cr>gv:Tabularize /:<cr>gv:s/ :/:/g<cr>:noh<cr>
+noremap <space>= :Tabularize /^[^=]*\zs=<cr>
+
+
 " Make Y work like D.
 nnoremap Y y$
 
-" Create newlines in normal mode.
-nnoremap <cr> o<esc>
-
 " Pathogen fun.
 call pathogen#infect()
-
-" Folding.
-set foldmethod=indent
-set foldnestmax=2
-set nofoldenable
-nnoremap <space> za
 
 " NERDTree.
 noremap <C-n> :NERDTreeToggle<cr>
@@ -73,7 +71,45 @@ let g:NERDTreeDirArrows=0
 " For NERDCommenter.
 let mapleader = ","
 let g:NERDSpaceDelims = 1
+let g:syntastic_debug = 0
+
+let g:ctrlp_max_height = 20
 
 " Bash style completion.
 set wildmode=list:longest
 set wildmenu
+
+let g:syntastic_python_checkers = ['flake8']
+
+cab Wq wq
+cab W w
+cab WQ wq
+cab Q q
+cab Vs vs
+cab VS vs
+cab Qa qa
+cab QA qa
+cab t Tabularize
+
+" grep fun
+cab gg Ggrep!
+autocmd QuickFixCmdPost *grep* cwindow
+autocmd FileType qf wincmd J
+
+function Ext()
+  return expand("%:e")
+endfunction
+
+function SimpleFind()
+  return 'Ggrep! "' . @" . '" -- "*.' . Ext() . '"'
+endfunction
+
+function FindDefinition()
+  let text=@""
+  return 'Ggrep! -e "\(def\|class\) ' . text . '\b" -e "\b' . text . '\b\s\+=" -e "\(factory\|service\|directive\|controller\) ''' . text . '''" -- "*.' . Ext() . '"'
+endfunction
+
+vnoremap <C-f> y:<C-r>=SimpleFind()<cr><cr><cr>gv
+nnoremap <C-f> yiw:<C-r>=SimpleFind()<cr><cr><cr>
+vnoremap <C-g> y:<C-r>=FindDefinition()<cr><cr><cr>gv
+nnoremap <C-g> yiw:<C-r>=FindDefinition()<cr><cr><cr>
