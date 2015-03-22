@@ -159,6 +159,7 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+" FZF
 nnoremap <silent> <leader><cr> :call fzf#run({
 \   'down': '40%',
 \   'sink': 'vertical split' })<cr>
@@ -166,3 +167,6 @@ nnoremap <silent> <leader><space> :call fzf#run({
 \   'down': '40%',
 \   'sink': 'sp' })<cr><c-w>=
 nnoremap <silent> <c-p> :FZF<cr>
+
+" vim-dispatch
+nnoremap <leader>t :Make %<cr>
