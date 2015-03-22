@@ -91,4 +91,4 @@ else
 fi
 unset color_prompt force_color_prompt
 
-test -r ~/.bash_local.sh && source ~/.bash_local.sh
+[ -f ~/.bash_local.sh ] && source ~/.bash_local.sh
